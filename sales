@@ -1,0 +1,32 @@
+import json
+fd=open("record.json",'r')
+r=fd.read()
+records=json.loads(r)
+
+records
+
+
+ui_prod=str(input("Enter the Product id:"))
+ui_quant=int(input("Enter the Quantity :"))
+
+print("Product:" , records[ui_prod]["name"])
+print("Price:" , records[ui_prod]["pr"])
+print("Biling Amount:" , records[ui_prod]["pr"]*ui_quant)
+records[ui_prod]['qn']=records[ui_prod]['qn']-ui_quant
+sal.append({'proud':ui_prod,'qn':ui_quant,'amount':records[ui_prod]['pr']*ui_quant})
+records
+sal
+
+#Update Inventory after purchase
+
+js =json.dumps(records)
+fd=open("record.json",'w')
+fd.write(js)
+fd.close
+
+sales[(len(sales)+1)]={'proud':ui_prod,'qn': ui_quant,'amount':records[ui_prod]['pr']*ui_quant}
+
+sale=json.dumps(sales)
+fd=open('record.json','w')
+r=fd.write(sale)
+fd.close()
