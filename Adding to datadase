@@ -1,0 +1,17 @@
+import json
+fd=open("record.json",'r')
+r=fd.read()
+fd.close()
+record= json.loads(r)
+
+
+prod_id=str(input("Enter the Product Id: "))
+name=str(input("Enter the name: "))
+pr=int(input("Enter the Price : "))
+qn=int(input("Enter the Quantity: "))
+record[prod_id]={'name':name, 'pr':pr, 'qn':qn}
+js=json.dumps(record)
+fd=open("record.json",'w')
+fd.write(js)
+fd.close()
+record
